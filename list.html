@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+            min-height: 100vh;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .glass-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateX(4px);
+        }
+        .orb {
+            filter: blur(80px);
+            opacity: 0.35;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-8 font-sans">
+
+    <!-- Background orbs -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="orb absolute top-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-blue-500"></div>
+        <div class="orb absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full bg-purple-600"></div>
+        <div class="orb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-cyan-400"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-lg space-y-6">
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-semibold text-white tracking-tight mb-2">Lists</h1>
+            <p class="text-white/40 text-sm tracking-widest uppercase">HTML & CSS Fundamentals</p>
+        </div>
+
+        <!-- Unordered List Card -->
+        <div class="glass rounded-3xl p-6">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-8 h-8 rounded-xl bg-blue-500/30 border border-blue-400/30 flex items-center justify-center">
+                    <span class="text-blue-300 text-sm">•••</span>
+                </div>
+                <h2 class="text-white font-medium text-lg tracking-tight">Unordered List</h2>
+                <span class="ml-auto text-white/30 text-xs font-mono">&lt;ul&gt;</span>
+            </div>
+            <ul class="space-y-2">
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                    <span class="text-white/80 text-sm">HTML</span>
+                    <span class="ml-auto text-white/20 text-xs font-mono">type="square"</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></span>
+                    <span class="text-white/80 text-sm">CSS</span>
+                    <span class="ml-auto text-white/20 text-xs font-mono">type="disc"</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span>
+                    <span class="text-white/80 text-sm">Javascript</span>
+                    <span class="ml-auto text-white/20 text-xs font-mono">type="none"</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-pink-400 flex-shrink-0"></span>
+                    <span class="text-white/80 text-sm">Tailwind CSS</span>
+                    <span class="ml-auto text-white/20 text-xs font-mono">default</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Ordered List Card -->
+        <div class="glass rounded-3xl p-6">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-8 h-8 rounded-xl bg-purple-500/30 border border-purple-400/30 flex items-center justify-center">
+                    <span class="text-purple-300 text-xs font-bold">123</span>
+                </div>
+                <h2 class="text-white font-medium text-lg tracking-tight">Ordered List</h2>
+                <span class="ml-auto text-white/30 text-xs font-mono">&lt;ol&gt;</span>
+            </div>
+            <ol class="space-y-2">
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-4">
+                    <span class="w-6 h-6 rounded-lg bg-purple-500/30 border border-purple-400/20 flex items-center justify-center text-purple-300 text-xs font-semibold flex-shrink-0">1</span>
+                    <span class="text-white/80 text-sm">Open github.com</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-4">
+                    <span class="w-6 h-6 rounded-lg bg-purple-500/30 border border-purple-400/20 flex items-center justify-center text-purple-300 text-xs font-semibold flex-shrink-0">2</span>
+                    <span class="text-white/80 text-sm">Login ke Akun Github sendiri</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-4">
+                    <span class="w-6 h-6 rounded-lg bg-purple-500/30 border border-purple-400/20 flex items-center justify-center text-purple-300 text-xs font-semibold flex-shrink-0">3</span>
+                    <span class="text-white/80 text-sm">Create new Repository</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-4">
+                    <span class="w-6 h-6 rounded-lg bg-purple-500/30 border border-purple-400/20 flex items-center justify-center text-purple-300 text-xs font-semibold flex-shrink-0">4</span>
+                    <span class="text-white/80 text-sm">Isi Nama Repository</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-4">
+                    <span class="w-6 h-6 rounded-lg bg-purple-500/30 border border-purple-400/20 flex items-center justify-center text-purple-300 text-xs font-semibold flex-shrink-0">5</span>
+                    <span class="text-white/80 text-sm">On kan Readme</span>
+                </li>
+                <li class="glass-item rounded-2xl px-4 py-3 flex items-center gap-4">
+                    <span class="w-6 h-6 rounded-lg bg-purple-500/30 border border-purple-400/20 flex items-center justify-center text-purple-300 text-xs font-semibold flex-shrink-0">6</span>
+                    <span class="text-white/80 text-sm">Click Create Repository</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Footer note -->
+        <p class="text-center text-white/20 text-xs">
+            Dengan menambahkan <code class="text-white/40 font-mono">type="a"</code> di &lt;ol&gt; bisa merubah urutan menjadi a, b, c
+        </p>
+
+    </div>
+</body>
+</html>
